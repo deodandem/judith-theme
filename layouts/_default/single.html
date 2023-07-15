@@ -1,0 +1,36 @@
+{{define "main"}}
+
+{{if isset .Params "bg"}}
+    <html style="background-image: url({{.Param "bg"}})">
+ {{ else }}
+   <html style="background-color: white">
+{{ end }}
+
+<body>  
+
+    <!--Content-->
+
+{{if eq .Params.bg "white"}} <div class="corner-button">
+    <a href="/about">✦</a><br><br>
+</div>
+       
+        {{ else }}
+        <div class="corner-button">
+            <a href="/about">✦</a><br><br>
+        </div>
+            {{ end }}
+
+
+
+<div class="largebox">  
+    {{with .Content}}<content>{{.}}</content>{{end}}
+</div>
+</body>
+
+</html>  
+{{- partial "large-footer.html" . -}}
+
+
+{{end}}
+
+

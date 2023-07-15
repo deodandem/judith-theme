@@ -1,0 +1,58 @@
+{{define "main"}}
+<div class="main">
+  <html style="background-color: white">
+
+<!--_index.md-->
+{{if not .IsHome}}
+{{with .Title}}
+<div>
+  <heading>{{.}}</heading>
+</div>
+{{end}}
+{{with .Content}}
+<div>
+  <article>{{.}}</article>
+</div>
+{{end}}
+{{end}}
+
+
+<!--$paginator-->
+{{$p := .Pages}}
+{{if .IsHome}}
+{{$p = where site.RegularPages "Section" "in" .Site.Params.mainSections}}
+{{else if eq .Kind "taxonomy"}}
+{{$p = $p.ByTitle}}
+{{end}}
+{{$paginator := .Paginate $p}}
+
+<!--list-->
+
+<div style="width: fit-content; margin: 100px auto 50px auto;">
+
+    {{ range (.Site.RegularPages.GroupByDate "2006")  }}
+    <ol class="custom-counter">
+        {{ if (where .Pages "Section" "posts") }}
+    
+            {{ range ((where .Pages "Section" "posts")).Reverse }}
+   
+            <li>
+            <a href="{{ .RelPermalink }}">
+            <div class="card">
+                    <span style="font-size:20px;text-transform: uppercase;">{{ .Title }}</span>
+                      - {{ .PublishDate.Format "1/02/2006" }}</span>
+                      <div style="margin-left:45px"><i>{{ .Summary }}</i></div>
+                        </div></a>
+                      </li> 
+                  {{ end }}
+             
+        {{ end }}
+     {{ end }}
+    </ol>
+</div>
+
+
+
+</div>
+
+{{end}}

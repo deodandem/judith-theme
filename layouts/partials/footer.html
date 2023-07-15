@@ -1,0 +1,62 @@
+<footer class="footer">
+    
+    {{if site.Menus}}
+
+    <nav class="footerbar">
+	{{$currentPage := .}}
+	{{range site.Menus.footer}}
+		{{if .HasChildren}}
+		<li class="{{if $currentPage.HasMenuCurrent "main" .}}active{{end}}">
+			<a href="#">
+				{{.Pre}}
+				<span>{{.Name}}</span>
+			</a>
+		</li>
+		<ul>
+			
+		</ul>
+		{{else}}
+
+		{{end}}
+	{{end}}
+{{end}}
+         </nav>
+
+    
+		<div class="footer">
+			<div style="color: grey; margin-bottom:1em">
+			Last update: {{ now.Format "1/02/2006" }}</div>
+		©
+		{{with site.Params.startdate}}
+			{{dateFormat "2006" .}}-
+		{{- end}}
+		{{- now.Format "2006"}} DCP —
+	Powered by <a href="https://gohugo.io">&nbsp;Hugo</a>
+ </div>
+
+
+<!--js-->
+{{with site.Menus.main}}
+<script src="{{relLangURL ""}}js/sk2.js"></script>
+{{end}}
+
+<script>
+	var tooltipSpans = document.querySelectorAll('div.tooltip>span');
+
+	window.onmousemove = function(e) {
+	
+	  tooltipSpans.forEach(function(element, index) {
+		let x = e.clientX
+		let y = e.clientY;
+		element.style.top = (y + 20 * index) + 'px';
+		element.style.left = (x + 20) + 'px';
+	  })
+	
+	};
+</script>
+
+
+
+
+
+</footer>

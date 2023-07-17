@@ -22,7 +22,29 @@
 
 
 <div class="largebox">  
+
+
+{{if isset .Params "bg"}}
+<a href="/"><div style="font-size:80px; color: white; margin: 150px auto 25px -70px; width: 700px;">{{ .Title }}</div></a>
+    <div style="font-size: 30px; color: white; margin: 40px auto 70px -60px; width: 700px;">{{ .PublishDate.Format "1/02/2006"}}
+</div>
+
+
+{{ else }}
+
+<div style="font-size:100px; color: black; margin: 100px auto 70px -70px;">{{ .Title }}</div>
+
+<div style="font-size: 25px; margin:0px auto 50px -60px; color: black;">{{ .PublishDate.Format "1/02/2006"}}</div>
+
+{{ end }}
+
+   
+
+   
+
     {{with .Content}}<content>{{.}}</content>{{end}}
+
+   
 </div>
 </body>
 

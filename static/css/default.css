@@ -12,19 +12,15 @@ html {
    background-size: cover;
   }
   
-  @media only screen and (max-device-width: 500px) {
-    html {
-      background: top center fixed;
-      background-size: auto cover;
-    }
 
-    .standard {
+
+.standard {
       font-size:10px;
       color: black;
       max-width: 850px;
       line-height:1.9em;
     }
-  }
+
   
   hr {
     border: none;
@@ -719,8 +715,7 @@ hr::before {
 
   .largebox {
     width: 650px;
-    margin:50px auto 50px auto;
-    padding:60px 50px 50px 100px;
+    margin:70px auto 70px auto;
     font-family: Times;
     color: black;
 
@@ -728,7 +723,7 @@ hr::before {
   }
   
   .largebox p {
-    width: 90%;
+    width: 100%;
     font-size:20px;
     line-height: 1.5em;
   }
@@ -740,8 +735,7 @@ hr::before {
     font-size: 5em;
       text-align: center;
       width: 90%;
-      margin: auto;
-      margin-top: 100px;
+      margin: 0px auto 60px auto;
       font-weight:500;
   }
   
@@ -1006,11 +1000,8 @@ hr::before {
   
   .corner-button { 
     font-size: 1em; 
-    position: relative;
-    top:0;
-    margin-top:75px;
-    margin-left: 85%;
-    margin-bottom: -5em;
+    width: fit-content;
+    margin: 50px 50px 50px auto;
   }
   .corner-button a { 
     color: grey;
@@ -1167,11 +1158,8 @@ hr::before {
   padding: 30px 20px;
 }
   
-  .main,
-  header,
-  footer {
+  .main {
     margin: auto;
-    margin-top: 2em;
     width: 90%;
     position: relative;
   }
@@ -1314,12 +1302,9 @@ hr::before {
     text-align: center;
     font-size:16px;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
     color: grey;
-    padding-right: 5px;
-    margin-top: 4em;
-    padding-bottom: 4em;
+    margin: 100px auto 0px auto;
+    padding-bottom: 50px;
   }
   
   div .scroll-wrapper {
@@ -1439,19 +1424,7 @@ toc li {
   border-right: 10px solid transparent;
   border-top: 20px solid rgb(200,200,200,.7);
 }
-  
-  
-  @media (max-width: 900px ) {
-    .title {
-      font-size: 8vw;
-      padding-top: .7em;
-    }
-    .menubar {
-      font-size: 3vw;
-    }
-  
-  }
-  
+ 
 
   
 

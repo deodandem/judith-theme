@@ -1,16 +1,11 @@
 {{define "main"}}
 
-{{if isset .Params "bg"}}
-    <html style="background-image: url({{.Param "bg"}})">
- {{ else }}
-   <html style="background-color: white">
-{{ end }}
 
 <body>  
 
     <!--Content-->
 
-<div class="largebox" style="border: 1px solid black;">  
+<div class="largebox" style="width: 600px; margin-top: 75px; border: 1px solid black; padding: 50px 60px 50px 70px;">  
     {{with .Content}}<content>{{.}}</content>{{end}}
 </div>
 </body>
